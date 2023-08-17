@@ -1,20 +1,19 @@
 import React from 'react';
-import CostItem from "./components/CostItem";
 import Costs from "./components/Costs";
 
 function App() {
-
     const costs = [
         {
             date: new Date(2023, 2, 12),
-            description: "Триммер",
+            description: "Продукты",
             amount: 15.20,
         },
         {
             date: new Date(2023, 3, 15),
-            description: "Magnum",
+            description: "Транспорт",
             amount: 17.20,
-        }, {
+        },
+        {
             date: new Date(2023, 4, 20),
             description: "Еда",
             amount: 20.20,
@@ -23,11 +22,12 @@ function App() {
 
     return (
         <div>
-            <h1>Welcome to react course Isl
-                <div className='costs'>
-                    <Costs />
-                </div>
+            <h1>Welcome to the React Course</h1>
+            <div className='costs'>
+                <Costs costs={costs} />
+            </div>
         </div>
     );
+}
 
 export default App;

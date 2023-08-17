@@ -1,24 +1,27 @@
-import CostItem from "./CostItem";
 import React from "react";
+import CostItem from "./CostItem";
+import "./Costs.css"
+function Costs(props) {
 
-function Costs(props){
-
-    return(
-        <CostItem
-            date={costs[0].date}
-            description={costs[0].description}
-            amount={costs[0].amount}
-        />
-    <CostItem
-        date={costs[1].date}
-        description={costs[1].description}
-        amount={costs[1].amount}
-    />
-    <CostItem
-        date={costs[2].date}
-        description={costs[2].description}
-        amount={costs[2].amount}
-        />
+    return (
+        <div>
+            <CostItem
+                date={props.costs[0].date}
+                description={props.costs[0].description}
+                amount={props.costs[0].amount}
+            />
+            <CostItem
+                date={props.costs[1].date}
+                description={props.costs[1].description}
+                amount={props.costs[1].amount}
+            />
+            <CostItem
+                date={props.costs[2].date}
+                description={props.costs[2].description}
+                amount={props.costs[2].amount}
+            />
+        </div>
     );
 }
+
 export default Costs;

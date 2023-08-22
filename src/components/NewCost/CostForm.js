@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 import './CostForm.css'
 
-function CostForm() {
+function CostForm(props) {
 
     const [inputName, setInputName] = useState('')
     const [inputAmount, setInputAmount] = useState('')
@@ -49,7 +49,7 @@ function CostForm() {
         // })
     }
 
-    function submitHandler(event){
+    function submitHandler(event) {
         //отключение перезагрузки страницы
         event.preventDefault();
         const costData = {
@@ -57,7 +57,8 @@ function CostForm() {
             amount: inputAmount,
             date: new Date(inputDate)
         };
-        console.log(costData)
+
+        props.onSaveCostData(costData);
         setInputName('');
         setInputAmount('');
         setInputDate('');
